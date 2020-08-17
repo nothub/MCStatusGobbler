@@ -1,0 +1,48 @@
+## project specific
+volume/report.csv
+
+## python
+# venv
+venv/
+# compilation artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+build/
+# pyenv
+.python-version
+# pipenv
+Pipfile.lock
+# Environments
+.env
+.venv
+# mkdocs
+/site
+
+## intellij
+.idea/
+out/
+*.iml
+*.ipr
+*.iws
+
+## windows
+Thumbs.db
+[Dd]esktop.ini
+*.lnk
+
+## linux
+*~
+.Trash-*
+.nfs*
+.fuse_hidden*
+.directory
+
+## mac
+.DS_Store
+._*
+.AppleDouble
+.LSOverride
+.AppleDB
+.AppleDesktop
+.apdisk
