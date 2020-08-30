@@ -1,4 +1,5 @@
 from mcstatus import MinecraftServer
+from datetime import datetime
 
 
 def pollstatus(address):
@@ -17,7 +18,7 @@ def pollstatus(address):
         players = -1
         latency = -1
 
-    return str("{0},{1},{2}".format(address, players, latency))
+    return str("{0},{1},{2}".format(int(datetime.utcnow().timestamp()), players, latency))
 
 
 if __name__ == '__main__':
