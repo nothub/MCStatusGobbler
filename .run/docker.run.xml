@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="true" name="docker" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+  <configuration default="false" name="docker" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
     <deployment type="dockerfile">
       <settings>
         <option name="imageTag" value="dev" />
@@ -12,8 +12,8 @@
         <option name="volumeBindings">
           <list>
             <DockerVolumeBindingImpl>
-              <option name="containerPath" value="/vol" />
-              <option name="hostPath" value="$PROJECT_DIR$/volume" />
+              <option name="containerPath" value="/app/log" />
+              <option name="hostPath" value="$PROJECT_DIR$/log" />
             </DockerVolumeBindingImpl>
           </list>
         </option>

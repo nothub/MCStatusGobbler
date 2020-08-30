@@ -12,11 +12,12 @@ RUN apt-get install -y --no-install-recommends python3 python3-pip \
   && apt-get -qy clean \
   && apt-get -qy autoremove
 
-VOLUME /vol
-
 WORKDIR /app
 COPY gobbler.py /app
 COPY run.sh /app
+COPY servers.txt /app
+
+VOLUME /log
 
 RUN pip3 install --no-cache-dir mcstatus
 

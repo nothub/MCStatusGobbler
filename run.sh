@@ -2,14 +2,16 @@
 
 set -e
 
-INPUT_FILE=/vol/servers.txt
-OUTPUT_FILE=/vol/report.csv
+INPUT_FILE=servers.txt
+LOG_DIR=log
 
-true > "$OUTPUT_FILE"
+mkdir -p "$LOG_DIR"
+
 i=0
-while IFS="" read -r p || [ -n "$p" ]
+while IFS="" read -r server || [ -n "$server" ]
 do
-  python3 gobbler.py "$p" >> "$OUTPUT_FILE" &
+  touch -a "$LOG_DIR/$server".csv
+  python3 gobbler.py "$server" >> "$LOG_DIR/$server".csv &
   pids[${i}]=$!
   i=$((i + 1))
 done < "$INPUT_FILE"
